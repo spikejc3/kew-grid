@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kew Grid Prototype - custom</title>
+    <link rel="stylesheet" href="/css/style-custom.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img class="logo" src="img/logo.svg">
+            <nav>
+                <ul>
+                    <li><a href="index.html">1170px</a></li>
+                    <li><a href="1370.html">1370px</a></li>
+                    <li><a href="1440.html">1440px</a></li>
+                    <li><a href="custom.html">Custom</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero-banner">
+            <div class="container">
+                <div>
+                    <h1 id="breakpoint-val">Breakpoint 1: 0 - 567px</h1>
+                    <p>Browser width: <span id="browser-width-val"></span></p>
+                    <p>Container width: <span id="container-width-val"></span></p>
+                    <p>Margins: <span id="margin-val">20px</span> Gutters: <span id="gutter-val">15px</span></p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container flex-wrapper">
+                <div class="col"><img src="https://placehold.co/270@2x.png"></div>
+                <div class="col"><img src="https://placehold.co/270@2x.png"></div>
+                <div class="col"><img src="https://placehold.co/270@2x.png"></div>
+                <div class="col"><img src="https://placehold.co/270@2x.png"></div>
+            </div>
+        </section>
+        <section>
+            <div class="container flex-wrapper">
+                <div class="left col"><div class="col"><img src="https://placehold.co/570@2x.png"></div>
+                </div>
+                <div class="right col">
+                    <div class="row">
+                        <div class="col"><img src="https://placehold.co/270@2x.png"></div>
+                        <div class="col"><img src="https://placehold.co/270@2x.png"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><img src="https://placehold.co/270@2x.png"></div>
+                        <div class="col"><img src="https://placehold.co/270@2x.png"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container flex-wrapper">
+                <div class="col"><img src="https://placehold.co/370x570@2x.png"></div>
+                <div class="col"><img src="https://placehold.co/370x570@2x.png"></div>
+                <div class="col"><img src="https://placehold.co/370x570@2x.png"></div>
+            </div>
+        </section>
+    </main>
+	<script>
+        const breakpointVal = document.getElementById('breakpoint-val');
+        const browserWidthVal = document.getElementById('browser-width-val');
+        const containerWidthVal = document.getElementById('container-width-val');
+        const marginVal = document.getElementById('margin-val');
+        const gutterVal = document.getElementById('gutter-val');
+
+        const updateGridStats = () => {
+            const windowWidth = window.innerWidth;
+            const containerWidth = document.querySelector('.container').offsetWidth;
+            browserWidthVal.innerHTML = windowWidth + 'px';
+            containerWidthVal.innerHTML = containerWidth + 'px';
+
+            if (windowWidth < 568) {
+                breakpointVal.innerHTML = 'Breakpoint 1: 0 - 567px';
+                marginVal.innerHTML = '20px';
+                gutterVal.innerHTML = '15px';
+            } else if (windowWidth < 768) {
+                breakpointVal.innerHTML = 'Breakpoint 2: 568 - 767px';
+                marginVal.innerHTML = '20px';
+                gutterVal.innerHTML = '20px';
+            } else if (windowWidth < 1024) {
+                breakpointVal.innerHTML = 'Breakpoint 3: 768 - 1023px';
+                marginVal.innerHTML = '30px';
+                gutterVal.innerHTML = '25px';
+            } else if (windowWidth < 1550) {
+                breakpointVal.innerHTML = 'Breakpoint 4: 1024 - 1549px';
+                marginVal.innerHTML = '30px';
+                gutterVal.innerHTML = '30px';
+            } else {
+                breakpointVal.innerHTML = 'Breakpoint 5: 1550px +';
+                marginVal.innerHTML = 'auto';
+                gutterVal.innerHTML = '30px';
+            }
+        }
+
+        updateGridStats();
+        window.onresize = updateGridStats;
+        
+    </script>
+</body>
+</html>
