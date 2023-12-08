@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* --------------- GRID STYLES --------------- */
+
+.container {
+    max-width: 1470px;
+    margin: 0 20px;
+    background-color: #f4f3f1;
+}
+
+.flex-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.col {
+    background-color: #c8c8c8;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.col:last-child, .row:last-child {
+    margin-bottom: 0;
+}
+
+.row .col {
+    margin-right: 15px;
+    margin-bottom: 0;
+}
+
+.row .col:last-child {
+    margin-right: 0;
+}
+
+
+@media (min-width: 568px) {
+    .col {
+        margin-bottom: 20px;
+    }
+    
+    .row {
+        margin-bottom: 20px;
+    }
+    
+    .row .col {
+        margin-right: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        margin: 0 30px;
+    }
+
+    .flex-wrapper {
+        flex-direction: row;
+    }
+
+    .col {
+        margin-right: 25px;
+        margin-bottom: 0;
+    }
+    
+    .row {
+        margin-bottom: 25px;
+    }
+    
+    .col:last-child, .row:last-child {
+        margin-right: 0;
+    }
+    
+    .row .col {
+        margin-right: 25px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .col {
+        margin-right: 30px;
+    }
+    
+    .row {
+        margin-bottom: 30px;
+    }
+    
+    .row .col {
+        margin-right: 30px;
+    }
+}
+
+@media (min-width: 1530px) {
+    .container {
+        margin: 0 auto;
+    }
+}
+
+
+
+/* --------------- EXAMPLE CONTENT STYLES --------------- */
+
+section {
+    padding: 40px 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+header {
+    padding: 10px 0;;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .logo {
+    width: 218px;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.hero-banner {
+    height: 400px;
+    background-color: #c8c8c8;
+}
+
+.hero-banner .container {
+    height: 100%;
+    background-color: rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#margin-val {
+    margin-right: 30px;;
+}

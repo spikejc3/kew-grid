@@ -6,7 +6,7 @@ body {
 /* --------------- GRID STYLES --------------- */
 
 .container {
-    max-width: 1490px;
+    max-width: 1410px;
     margin: 0 20px;
     background-color: #f4f3f1;
 }
@@ -83,6 +83,9 @@ body {
 }
 
 @media (min-width: 1024px) {
+    .container {
+        margin: 0 60px;
+    }
     .col {
         margin-right: 30px;
     }
@@ -96,7 +99,7 @@ body {
     }
 }
 
-@media (min-width: 1550px) {
+@media (min-width: 1530px) {
     .container {
         margin: 0 auto;
     }
